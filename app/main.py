@@ -2,7 +2,6 @@ from fastapi import FastAPI
 import gradio as gr
 import pandas as pd
 import numpy as np
-import locale
 
 from sklearn.cluster import KMeans
 from sklearn.compose import ColumnTransformer
@@ -138,9 +137,6 @@ file_id=url.split('/')[-2]
 dwn_url='https://drive.google.com/uc?id=' + file_id
 web_df = pd.read_csv(dwn_url)
 
-# Set locale for currency formatting
-locale.setlocale( locale.LC_ALL, 'en_CA.UTF-8' )
-
 # Function that will be run to make the ML prediction
 def make_prediction(*inputs):
   column_labels = ['miles', 'year', 'make', 'model', 'trim', 'body_type', 'vehicle_type', 'drivetrain', 'transmission', 'fuel_type', 'engine_size', 'engine_block', 'zip']
@@ -152,7 +148,7 @@ def make_prediction(*inputs):
   input = preprocessor.transform(pred_df)
   price = rand_for.predict(input)[0]
 
-  return f"## Your Predicted price is {locale.currency(price, grouping=True)}"
+  return f"## Your Predicted price is ${price:,.2f}"
 
 # Helper function that let's us reduce the choices for a Dropdown given a prior choice
 def filter_choices(choice, choice_col, filter_col):
