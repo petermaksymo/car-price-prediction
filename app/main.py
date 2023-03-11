@@ -169,7 +169,7 @@ with gr.Blocks() as demo:
   # Used Car Price Prediction
   Welcome to our machine learning project where we try to predict the value of your car given some input parameters.
 
-  We are using a Canadian used car listing [dataset from Kaggle](https://www.kaggle.com/datasets/rupeshraundal/marketcheck-automotive-data-us-canada?select=ca-dealers-used.csv). Check out our [Colab Notebook](https://colab.research.google.com/drive/1a9Sn1ooKsqXIAhT_MadAuZ-1xJ1dz-p7?usp=sharing) and our [GitHub Repo](https://github.com/petermaksymo/car-price-prediction).
+  We are using a Canadian used car listing [dataset from Kaggle](https://www.kaggle.com/datasets/rupeshraundal/marketcheck-automotive-data-us-canada?select=ca-dealers-used.csv). Check out our [Colab Notebook](https://colab.research.google.com/drive/1gMBws5LRb8aX1iRwepzndPclInQ9S5Jq?usp=sharing) and our [GitHub Repo](https://github.com/petermaksymo/car-price-prediction).
   ''')
 
   with gr.Row():
