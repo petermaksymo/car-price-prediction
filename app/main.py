@@ -139,7 +139,7 @@ dwn_url='https://drive.google.com/uc?id=' + file_id
 web_df = pd.read_csv(dwn_url)
 
 # Set locale for currency formatting
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale( locale.LC_ALL, 'en_CA.UTF-8' )
 
 # Function that will be run to make the ML prediction
 def make_prediction(*inputs):
