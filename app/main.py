@@ -238,4 +238,4 @@ with gr.Blocks() as demo:
   ''')
 
 
-app = gr.mount_gradio_app(app, demo, path='/', show_api=False)
+app = gr.mount_gradio_app(app, demo, path='/')
