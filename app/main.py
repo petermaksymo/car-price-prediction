@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import gradio as gr
 import pandas as pd
 import numpy as np
+import os
 
 from sklearn.cluster import KMeans
 from sklearn.compose import ColumnTransformer
@@ -163,8 +164,11 @@ def filter_choices(choice, choice_col, filter_col):
     choices = np.sort(choices).tolist()
     return gr.Dropdown.update(choices=choices, visible=True, interactive=True)
 
+head = f"""
+<script src='{os.environ.get('UMAMI_URL')}' data-website-id='{os.environ.get('UMAMI_ID')}' />
+""" if 'UMAMI_URL' in os.environ and 'UMAMI_ID' in os.environ else ""
 
-with gr.Blocks() as demo:
+with gr.Blocks(head=head) as demo:
   gr.Markdown('''
   # Used Car Price Prediction
   Welcome to our machine learning project where we try to predict the value of your car given some input parameters.
