@@ -165,7 +165,7 @@ def filter_choices(choice, choice_col, filter_col):
     return gr.Dropdown.update(choices=choices, visible=True, interactive=True)
 
 head = f"""
-<script src='{os.environ.get('UMAMI_URL')}' data-website-id='{os.environ.get('UMAMI_ID')}' />
+<script defer src='{os.environ.get('UMAMI_URL')}' data-website-id='{os.environ.get('UMAMI_ID')}' ></script>
 """ if 'UMAMI_URL' in os.environ and 'UMAMI_ID' in os.environ else ""
 
 with gr.Blocks(head=head) as demo:
